@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StartJS</title>
+</head>
+<body>
+    <div class="container">
+    <div class="content">
+    <input type="button" class="button"  value="Повторно ввести имя" onclick="ReEnterName()">
+    <div class="blocktext">
+    <h4>
+        JavaScript  — мультипарадигменный язык программирования. Поддерживает объектно-ориентированный, императивный и функциональный стили. Является реализацией спецификации ECMAScript (стандарт ECMA-262).
+
+        JavaScript обычно используется как встраиваемый язык для программного доступа к объектам приложений. Наиболее широкое применение находит в браузерах как язык сценариев для придания интерактивности веб-страницам.
+        
+        Основные архитектурные черты: динамическая типизация, слабая типизация, автоматическое управление памятью, прототипное программирование, функции как объекты первого класса.
+        
+        На JavaScript оказали влияние многие языки, при разработке была цель сделать язык похожим на Java. Языком JavaScript не владеет какая-либо компания или организация, что отличает его от ряда языков программирования, используемых в веб-разработке.
+        
+        Название «JavaScript» является зарегистрированным товарным знаком корпорации Oracle в США.
+        
+        В 1992 году компания Nombas (впоследствии приобретённая Openwave) начала разработку встраиваемого скриптового языка Cmm (Си-минус-минус), который, по замыслу разработчиков, должен был стать достаточно мощным, чтобы заменить макросы, сохраняя при этом схожесть с Си, чтобы разработчикам не составляло труда изучить его. Главным отличием от Си была работа с памятью. 
+        В новом языке всё управление памятью осуществлялось автоматически: не было необходимости создавать буферы, объявлять переменные, осуществлять преобразование типов. В остальном языки сильно походили друг на друга: в частности, Cmm поддерживал стандартные функции и операторы Си. Cmm был переименован в ScriptEase, поскольку исходное название звучало слишком негативно, а упоминание в нём Си «отпугивало» людей. На основе этого языка был создан проприетарный продукт CEnvi. 
+        В конце ноября 1995 года Nombas разработала версию CEnvi, внедряемую в веб-страницы. Страницы, которые можно было изменять с помощью скриптового языка, получили название Espresso Pages — они демонстрировали использование скриптового языка для создания игры, проверки пользовательского ввода в формы и создания анимации. Espresso Pages позиционировались как демоверсия, призванная помочь представить, что случится, если в браузер будет внедрён язык Cmm. 
+        Работали они только в 16-битовом Netscape Navigator под управлением Windows.
+        
+        Самая первая реализация JavaScript была создана Бренданом Эйхом (Brendan Eich) в компании Netscape, и с тех пор обновляется, чтобы соответствовать ECMA-262 Edition 5 и более поздним версиям. Этот движок называется SpiderMonkey и реализован на языке C/C++. Движок Rhino создан Норрисом Бойдом (Norris Boyd) и реализован на языке Java. Как и SpiderMonkey, Rhino соответствует ECMA-262 Edition 5.
+    </h4>
+    </div>
+    <script>
+        var name;
+
+        if (localStorage.getItem('name') != "") {
+            document.getElementById('task0').innerHTML = localStorage.getItem('name');
+        }
+
+        else (localStorage.setItem('name', prompt("Введите свое имя", "")))
+        document.getElementById('task0').innerHTML = localStorage.getItem('name');
+        alert ("Здравствуйте, " + localStorage.getItem('name'));
+    </script>
+
+    <div id="menu1">
+        <script>
+            function Triangle() {
+                var a = prompt("Введите высоту треугольника", "");
+                var h = prompt("Введите основание треугольника", "");
+                var s = (a * h) / 2;
+
+                if(a === "" || h === "" || isNaN(s) || a === null || h === null ){
+                    alert("Вы неправильно ввели данные");
+                }
+                else alert("Высота = " + h + "; " + "Основание = " + a + "; " + "Площадь = " + s);
+            }
+        </script>
+            <div class="block">
+        <input type="button" class="button" value="Найти площадь треугольника" onclick="Triangle()">
+    </div>
+
+    <div id="menu2">
+        <script>
+            function Strings() {
+                var fstr = prompt("Введите первую строку", "");
+                var sstr = prompt("Введите вторую строку", "");
+
+                if(fstr === "" || sstr === "" || fstr === null || sstr === null){
+                    alert("Вы не правильно указали строки");
+                }
+                else if (fstr.length == sstr.length) alert(true);
+                    else alert(false);              
+            }
+        </script>
+         <div class="block">
+        <input type="button" class="button" value="Сравнить строки" onclick="Strings()">
+    </div>
+
+    <div id="menu3">
+        <script>
+            function Array() {
+                let array = [];
+                var i, min, max;
+                for (i = 0; i < 5; i++) {
+                    array[i] = prompt("Введите пять чисел через запятую", "");
+                }
+                min = array[0];
+                max = array[0];
+                for (i = 0; i < 5; i++) {
+                    if (array[i] < min) min = array[i];
+                    if (array[i] > max) max = array[i];
+                }
+                if (array[i] === "" || array[i] === null || array[i] === undefined){
+                        alert("Данные были введены неправильно");
+                }
+                else alert("Минимальное значение массива = " + min + "; " + "Максимальное значение массива = " + max);
+            }
+        </script>
+         <div class="block">
+        <input type="button" class="button" value="Массив" id="array" onclick="Array()">
+         </div>
+
+    <div id="menu4">
+
+        <script>
+            var timeSpend = 0
+            var sNach = 30
+            var s = 30
+            var m = 00
+            var h = 00
+            var r = 0; var tt = 0;
+
+            function T() {
+                s -= 1;
+                if (s < 0) s = 59, m -= 1;
+                if (m < 0) m = 59, h -= 1;
+                if (h < 0) h = 23
+                if (s + m + h == 0) T3()
+                s = s + "";
+                m = m + "";
+                h = h + "";
+                if (s.length < 2) s = "0" + s;
+                if (m.length < 2) m = "0" + m;
+                if (h.length < 2) h = "0" + h;
+                menu4.innerHTML = h + ":" + m + ":" + s
+            }
+
+            function Pusk() {
+                if (!r) {
+                    r = 1; T2()
+                }
+            }
+
+            function T2() {
+                if (s + m + h == 0) s = 30, m = 00, h = 00;
+                tt = setInterval("T()", 1000)
+            }
+
+            function T3() {
+                clearInterval(tt);
+                r = 0;
+            }
+            function TimeSpend() {
+                timeSpend = sNach - s;
+                document.write("Прошло времени в секундах -" + ' ' + timeSpend)
+            }
+        </script>
+    </div>
+    <div class="block"> 
+    <input type="button" class="button" value="Старт" id="clock" onclick="Pusk()">
+    <input type="button" class="button" value="Стоп" id="clock" onclick="T3()">
+    <input type="button" class="button" value="Сколько прошло времени" id="clock" onclick="TimeSpend()">
+    </div>
+    <div id="menu5">
+
+        <script>
+            function StartTest(){
+                var result=0;
+
+                alert("В качестве ответа вводите цифру предлагаемого ответа.");
+
+                if(prompt("Вопрос №1. Как объявить переменную? \n1.var x \n2.var x = new x()") === '1'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+
+                if(prompt("Вопрос №2. Что делает оператор === \n1.Правильность введеных данных \n2.Сравнивает без приведения типа") === '2'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+
+                if(prompt("Вопрос №3. Язык JavaScript является подвидом языка Java — верно? \n1.Да \n2.Нет") === '1'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+
+                if(prompt("Вопрос №4. За сколько дней был разработан LiveScript — первая версия языка JavaScript? \n1.1 \n2.10") === '2'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+
+                if(prompt("Вопрос №5. Значение какого типа может быть результатом сравнения? \n1.int \n2.boolean") === '2'){
+                    result++;
+                    alert("Верно!");
+                }
+                else alert("Неверно!");
+                alert("Поздравляю! Тест закончен, вы набрали " + result + " правильных ответов из 10!");
+            }
+        </script>
+     <div class="block">
+        <input type="button" class="button" value="Начать тест" onclick="StartTest()"> 
+    </div>
+</div>
+</body>
+</html>
